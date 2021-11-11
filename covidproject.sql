@@ -1,12 +1,3 @@
-select * 
-from covidproject..COVIDDeaths
-where continent is null
-order by 3, 4
-
-select location, date, total_cases, new_cases, total_deaths, population
-from covidproject..COVIDDeaths
-order by 1, 2
-
 --Looking at the TOTAL CASES vs. TOTAL DEATHS 
 -- Shows the likelihood of dying if you contract covid in your Country 
 -- In Mexico % 7.63 
@@ -37,24 +28,11 @@ order by PercentPopulationInfected desc
 
 -- Showing Countries with Highest Deathcount per Population 
 
-
--- LET'S BREAK THINGS DOWN BY CONTINENT 
-select continent, max(cast(total_deaths as int)) AS TotalDeathCount
-from CovidProject..COVIDDeaths
-where continent is not null
-group by continent
-order by TotalDeathCount desc;
-
--- LET'S BREAK THINGS DOWN BY CONTINENT - "CORRECT"
+-- BREAK THINGS DOWN BY CONTINENT 
 select location, max(cast(total_deaths as int)) AS TotalDeathCount
 from CovidProject..COVIDDeaths 
 where continent is null
 group by location
-order by TotalDeathCount desc;
-
-select continent, max(cast(total_deaths as int)) AS TotalDeathCount
-from CovidProject..COVIDDeaths
-group by continent
 order by TotalDeathCount desc;
 
 -- Showing continents with the highest deathcount per population 
