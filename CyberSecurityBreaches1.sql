@@ -21,7 +21,7 @@ on a.[State] = b.[state]
 where a.Type_of_Breach <> b.Type_of_Breach
 group by a.Individuals_Affected, a.[State], b.[Type_of_Breach]
  
- -- Average People Affected by State via CTE: VA, IL, CA, NY, FL, TN, each was over +1 MILLION employees 
+ -- Average People Affected by State via CTE: VA, IL, CA, NY, FL, TN, each was over +1 MILLION - 4 MILLION employees 
  with cyberattacks as 
  (select [state], avg(individuals_affected) as AVG_PPL_affected, 
  date_of_breach, type_of_breach 
@@ -68,7 +68,7 @@ select [state], individuals_affected, date_of_breach,
 				 ORDER BY AVG_Individuals_Affected DESC
 
 
-	 -- Stored Procedure for Highest Count of Affected People DESC
+	 -- Stored Procedure for Highest Count of Affected People DESC -- 4 MILLION around 2014
 	create proc HighestCountAffected as 
 				 select [State], max(individuals_affected) HighestCountAffected, 
 				 Date_of_Breach
