@@ -13,7 +13,7 @@ FROM CYBERSECURITYBREACHES
 group by id
 having count(ID) > 1
 
--- Join all states with different breach type: Most common cyber attacks Phishing & Malware injection
+-- Join states with different breach type: Most common cyber attacks Phishing & Malware injection
 SELECT a.[State], a.Individuals_Affected, b.Type_of_Breach
 from CYBERSECURITYBREACHES a
 left join CyberSecurityBreaches b 
