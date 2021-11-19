@@ -1,3 +1,6 @@
+Data Exploration of Cyber Security Breaches: 
+-- More than +1 Million, up to 4 Million individuals affected within organizations per states such as: CA, NY, FL, IL per year highest count attacks between 2011-2014.
+
 -- MINOR cleaning
  select cast(date_of_breach as date) from CyberSecurityBreaches
 
@@ -13,7 +16,7 @@ FROM CYBERSECURITYBREACHES
 group by id
 having count(ID) > 1
 
--- Join states with different breach type: Most common cyber attacks Phishing & Malware injection
+-- Most common cyber attacks Phishing & Malware injection: Join states with different breach type
 SELECT a.[State], a.Individuals_Affected, b.Type_of_Breach
 from CYBERSECURITYBREACHES a
 left join CyberSecurityBreaches b 
@@ -21,7 +24,7 @@ on a.[State] = b.[state]
 where a.Type_of_Breach <> b.Type_of_Breach
 group by a.Individuals_Affected, a.[State], b.[Type_of_Breach]
  
- -- Average People Affected by State via CTE: VA, IL, CA, NY, FL, TN, each was over +1 MILLION - 4 MILLION employees 
+ -- On Average +1 MILLION up to 4 MILLION employees Affected per States via CTE: VA, IL, CA, NY, FL, TN  
  with cyberattacks as 
  (select [state], avg(individuals_affected) as AVG_PPL_affected, 
  date_of_breach, type_of_breach 
