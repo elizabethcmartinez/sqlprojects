@@ -1,6 +1,10 @@
 Data Exploration of Cyber Security Breaches: 
 -- Up to 4 Million employees affected within organizations per states: CA, NY, FL, IL per year highest count attacks specifically between 2011-2014.
-
+-- 43% of all data breaches involve small and medium-sized businesses
+-- Employees and emails are a leading cause of data breaches for small businesses 
+-- Most common cyber attacks Phishing & Malware injection
+ -- 2009 On Average a MILLION employees were Affected per States: VA, IL, CA, NY, FL, TN  
+ 
 -- MINOR cleaning
  select cast(date_of_breach as date) from CyberSecurityBreaches
 
