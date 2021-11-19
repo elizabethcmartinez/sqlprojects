@@ -1,4 +1,6 @@
--- SOCIAL MEDIA DEVELOPMENT OVER RECENT DECADE SPAN . Data shows social media outlets are not optional, they're vital for *consumer awareness & brand establishment.
+-- SOCIAL MEDIA DEVELOPMENT OVER RECENT DECADE SPAN : 
+-- Consider that there are now more than 4.2 billion active social media users across the globe
+--  83 percent of Instagram users say they discover new products on the platform
 
 -- VIEW: INSTAGRAM LAUNCHED OCTOBER 2010, 
 --THEREFORE REACHING IT'S FIRST 190 MILLION USERS BEGINNING 2013:
