@@ -1,5 +1,5 @@
 Data Exploration of Cyber Security Breaches: 
--- Up to 4 Million employees affected within organizations per states such as: CA, NY, FL, IL per year highest count attacks specifically between 2011-2014.
+-- Up to 4 Million employees affected within organizations per states: CA, NY, FL, IL per year highest count attacks specifically between 2011-2014.
 
 -- MINOR cleaning
  select cast(date_of_breach as date) from CyberSecurityBreaches
