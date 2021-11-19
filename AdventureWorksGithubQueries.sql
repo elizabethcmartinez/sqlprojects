@@ -1,44 +1,3 @@
-CREATE TRIGGER T_INSERT_DEPARTMENT  
-ON EmployeeData  
-FOR INSERT AS   
-   BEGIN  
-   INSERT Departments  VALUES ('Medicine')
-   End;
-
-   insert into EmployeeData values ('Elizabeth Martinez')
-
-   select max(id) from employeedata
-   select max(DepartmentID) from Departments
-
-      select * from EmployeeData
-   select * from Departments
-
-select @@IDENTITY
-select SCOPE_IDENTITY()
-
-SELECT IDENT_CURRENT('EmployeeData') AS IdentityValue
-
-
-CREATE PROCEDURE CHECKEMPLOYEEID
-@EMPLOYEEID INT 
-AS BEGIN 
-SET NOCOUNT ON; 
-DECLARE @EXISTS INT 
-IF EXISTS(SELECT EMPLOYEEID FROM EMPLOYEES WHERE EMPLOYEEID = @EMPLOYEEID) 
-BEGIN 
-	SET @EXISTS = 1 
-END 
-	ELSE 
-		BEGIN 
-			SET @EXISTS = 0 
-		END 
-	RETURN @EXISTS 
-END 
-
-DECLARE @RETURNVALUE INT 
-EXEC @RETURNVALUE = CHECKEMPLOYEEID 8
-SELECT @RETURNVALUE
-
 ALTER proc fetchsupplierproducts 
 @p_supplierID int, 
 @p_supplierName varchar(15) OUT,
@@ -82,25 +41,6 @@ EXEC spGetTotalEmployeeCountByGender @EMPLOYEECOUNT = @EMPLOYEETOTAL OUT,
 @GENDER = 'MALE'
 PRINT @EMPLOYEETOTAL 
 
-
-DECLARE @EMPLOYEETOTAL INT 
-EXEC spGetTotalEmployeeCountByGender 'MALE', @EMPLOYEETOTAL OUT
-PRINT @EMPLOYEETOTAL 
-
--- EXAMPLE SP WITH DEFAULT VALUES -- 
-CREATE PROCEDURE SPADDNUMBERS
-@NO1 INT = 100,
-@NO2 INT 
-AS BEGIN 
-	DECLARE @RESULT INT 
-	SET @RESULT = @NO1 + @NO2
-PRINT 'THE SUM OF THE 2 NUMBERS IS: ' + CAST(@RESULT AS VARCHAR) 
-END 
-
-EXEC SPADDNUMBERS @NO2 = 25
---OR
-EXEC SPADDNUMBERS @NO1 = DEFAULT, @NO2 = 25
-
 -- CASE WHEN EXAMPLE -- 
 SELECT [MIDDLE NAME], EMPLOYEEID 
 FROM table0 
@@ -110,24 +50,8 @@ THEN 1
 ELSE 0 
 END, [middle name], employeeid DESC;
 
-CREATE TABLE Employee
-(
-  ID INT PRIMARY KEY,
-  Name VARCHAR(50),
-  Gender VARCHAR(50),
-  DOB DATETIME,
-  DeptID INT
-)
-GO
-INSERT INTO Employee VALUES(1, 'Pranaya', 'Male','1996-02-29 10:53:27.060', 1)
-INSERT INTO Employee VALUES(2, 'Priyanka', 'Female','1995-05-25 10:53:27.060', 2)
-INSERT INTO Employee VALUES(3, 'Anurag', 'Male','1995-04-19 10:53:27.060', 2)
-INSERT INTO Employee VALUES(4, 'Preety', 'Female','1996-03-17 10:53:27.060', 3)
-INSERT INTO Employee VALUES(5, 'Sambit', 'Male','1997-01-15 10:53:27.060', 1)
-INSERT INTO Employee VALUES(6, 'Hina', 'Female','1995-07-12 10:53:27.060', 2)
-GO
-
 -- count the number of employees in the table using the output parameter 
+
 create proc spTotalCountEmployee1
 @totalcount int output 
 as
@@ -274,3 +198,23 @@ select * from [Order Details]
 select * from customers
 select * from Orders
 select * from [Order Details]
+
+CREATE TRIGGER T_INSERT_DEPARTMENT  
+ON EmployeeData  
+FOR INSERT AS   
+   BEGIN  
+   INSERT Departments  VALUES ('Medicine')
+   End;
+
+   insert into EmployeeData values ('Elizabeth Martinez')
+
+   select max(id) from employeedata
+   select max(DepartmentID) from Departments
+
+      select * from EmployeeData
+   select * from Departments
+
+select @@IDENTITY
+select SCOPE_IDENTITY()
+
+SELECT IDENT_CURRENT('EmployeeData') AS IdentityValue
