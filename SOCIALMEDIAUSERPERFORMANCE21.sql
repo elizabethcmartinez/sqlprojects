@@ -1,4 +1,4 @@
--- SOCIAL MEDIA DEVELOPMENT OVER RECENT DECADE SPAN 
+-- SOCIAL MEDIA DEVELOPMENT OVER RECENT DECADE SPAN . Data shows social media outlets are not optional, they're vital for *consumer awareness & brand establishment.
 
 -- VIEW: INSTAGRAM LAUNCHED OCTOBER 2010, 
 --THEREFORE REACHING IT'S FIRST 190 MILLION USERS BEGINNING 2013:
