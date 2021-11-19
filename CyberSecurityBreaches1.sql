@@ -4,6 +4,7 @@ Data Exploration of Cyber Security Breaches:
 -- Employees and emails are a leading cause of data breaches for small businesses 
 -- Most common cyber attacks Phishing & Malware injection
  -- 2009 On Average a MILLION employees were Affected per States: VA, IL, CA, NY, FL, TN  
+ -- Highest Count of Affected Employees -- 4 MILLION around 2014
  
 -- MINOR cleaning
  select cast(date_of_breach as date) from CyberSecurityBreaches
