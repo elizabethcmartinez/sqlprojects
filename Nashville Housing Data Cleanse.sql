@@ -5,7 +5,6 @@ SELECT SaleDateConverted
   update housing 
   set saledate = convert(date, saledate)
 
-
   alter table housing 
   add SaleDateConverted date 
 
@@ -16,7 +15,6 @@ SELECT SaleDateConverted
   FROM housing
   --where propertyaddress is null 
   order by parcelid
-
   
   SELECT a.parcelid, a.propertyaddress, b.parcelid, b.propertyaddress, isnull(a.propertyaddress, b.propertyaddress)
   from housing a
@@ -24,7 +22,6 @@ SELECT SaleDateConverted
   on a.parcelid = b.parcelid
   and a.uniqueid <> b.uniqueid 
  where a.propertyaddress is null 
-
 
  update a 
  set propertyaddress =  isnull(a.propertyaddress, b.propertyaddress)
